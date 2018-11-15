@@ -1,3 +1,3 @@
-# Spring Cloud Microservices Sample 01
+# Omilos
 
-Spring Cloud Microservices Sample 01
+Spring Cloud Microservices App

@@ -253,21 +253,13 @@ export default {
           name: 'Error 500',
           url: '/pages/500',
           icon: 'icon-star'
+        },
+        {
+          name: 'Register Club',
+          url: '/clubs/register',
+          icon: 'icon-star'
         }
       ]
-    },
-    {
-      name: 'Download CoreUI',
-      url: 'http://coreui.io/vue/',
-      icon: 'icon-cloud-download',
-      class: 'mt-auto',
-      variant: 'success'
-    },
-    {
-      name: 'Try CoreUI PRO',
-      url: 'http://coreui.io/pro/vue/',
-      icon: 'icon-layers',
-      variant: 'danger'
     }
   ]
 }

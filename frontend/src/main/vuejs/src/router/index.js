@@ -58,6 +58,10 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// Clubs
+const ClubRegister = () => import('@/views/clubs/Register')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -300,6 +304,21 @@ export default new Router({
             }
           ]
         }
+      ]
+    },
+    {
+      path: '/clubs',
+      redirect: '/clubs/list',
+      name: 'Clubs',
+      component: {
+              render (c) { return c('router-view') }
+      },
+      children: [
+        {
+                  path: 'register',
+                  name: 'Register',
+                  component: ClubRegister
+         }
       ]
     },
     {

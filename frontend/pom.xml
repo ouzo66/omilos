@@ -36,7 +36,7 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v10.13.0</nodeVersion>
+                            <nodeVersion>v11.1.0</nodeVersion>
                             <npmVersion>6.4.1</npmVersion>
                         </configuration>
                     </execution>
@@ -63,6 +63,17 @@
                             <arguments>run build</arguments>
                         </configuration>
                     </execution>
+                    <!-- Build and minify static files -->
+                    <execution>
+                        <id>npm run serve</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>site</phase>
+                        <configuration>
+                            <arguments>run serve</arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -84,6 +95,39 @@
                         </fileset>
                     </filesets>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/html</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/vuejs/dist/</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
