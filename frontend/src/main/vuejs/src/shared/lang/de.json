@@ -9,7 +9,8 @@
   "user": {
     "username": "Benutzername",
     "password": "Passwort",
-    "passwordrepeat" : "Passwort wiederholen"
+    "passwordrepeat" : "Passwort wiederholen",
+    "email" : "Email"
   },
   "login": {
     "title": "Login",
