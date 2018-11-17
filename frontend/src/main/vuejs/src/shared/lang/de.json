@@ -4,7 +4,23 @@
     "en": "Englisch",
     "de": "Deutsch",
     "fr": "Französich",
-    "it": "Italänisch"
+    "it": "Italienisch"
+  },
+  "user": {
+    "username": "Benutzername",
+    "password": "Passwort",
+    "passwordrepeat" : "Passwort wiederholen"
+  },
+  "login": {
+    "title": "Login",
+    "message": "Deine Benutzerdaten:",
+    "forgot": "Passwort vergessen?",
+    "button": "Anmelden"
+  },
+  "register" : {
+    "title" : "Registrieren",
+    "message" : "Hast du noch kein Zugang zu deinem Verein? Registriere Dich jetz!",
+    "button" : "Registrierung"
   },
   "club": {
     "title" : "Verein",

@@ -84,11 +84,6 @@ export default {
     ToggleLang,
     Nav
   },
-  data: function () {
-    return {
-      navigation2: []
-    }
-  },
   computed: {
     name () {
       return this.$route.name
@@ -100,3 +95,8 @@ export default {
 
 }
 </script>
+
+<style>
+
+</style>
+

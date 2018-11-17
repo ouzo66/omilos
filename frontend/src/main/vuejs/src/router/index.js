@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
+const BackgroundContainer = () => import('@/views/pages/Background')
 
 // Views
 const Dashboard = () => import('@/views/Dashboard')
@@ -331,9 +332,7 @@ export default new Router({
       path: '/pages',
       redirect: '/pages/404',
       name: 'Pages',
-      component: {
-        render (c) { return c('router-view') }
-      },
+      component: BackgroundContainer,
       children: [
         {
           path: '404',
