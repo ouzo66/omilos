@@ -8,18 +8,23 @@ import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
+import { i18n } from '@/shared/i18n'
+import 'es6-promise/auto'
+import Vuex from 'vuex'
 
 // todo
 // cssVars()
 
 Vue.use(BootstrapVue)
+Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  i18n,
   router,
   template: '<App/>',
   components: {
     App
   }
-})
+});

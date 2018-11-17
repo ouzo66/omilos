@@ -7,7 +7,6 @@
           <b><i class="fa fa-globe" aria-hidden="true"></i>milos</b>
       </b-link>
       <SidebarToggler class="d-md-down-none" display="lg" />
-
       <b-navbar-nav class="d-md-down-none">
         <b-nav-item class="px-3" to="/dashboard">Dashboard</b-nav-item>
         <b-nav-item class="px-3" to="/users" exact>Mitglieder</b-nav-item>
@@ -23,16 +22,17 @@
         <b-nav-item class="d-md-down-none">
           <i class="icon-location-pin"></i>
         </b-nav-item>
-        <ToggleLang />
+
         <DefaultHeaderDropdownAccnt/>
       </b-navbar-nav>
-
+      <AsideToggler class="d-none d-lg-block" />
+      <!--<AsideToggler class="d-lg-none" mobile />-->
     </AppHeader>
     <div class="app-body">
       <AppSidebar fixed>
-        <SidebarHeader />
-        <SidebarForm />
-        <Nav />
+        <SidebarHeader/>
+        <SidebarForm/>
+        <SidebarNav :navItems="nav"></SidebarNav>
         <SidebarFooter/>
 
         <SidebarMinimizer/>
@@ -44,7 +44,12 @@
           <router-view></router-view>
         </div>
       </main>
+      <!-- aside
+      <AppAside fixed>
 
+        <DefaultAside/>
+      </AppAside>
+      -->
     </div>
     <TheFooter>
       <!--footer-->
@@ -61,10 +66,10 @@
 </template>
 
 <script>
-import Nav from './Nav'
+import nav from '@/_nav'
 import { Header as AppHeader, SidebarToggler, Sidebar as AppSidebar, SidebarFooter, SidebarForm, SidebarHeader, SidebarMinimizer, SidebarNav, Aside as AppAside, AsideToggler, Footer as TheFooter, Breadcrumb } from '@coreui/vue'
+import DefaultAside from './DefaultAside'
 import DefaultHeaderDropdownAccnt from './DefaultHeaderDropdownAccnt'
-import ToggleLang from './ToggleLang'
 
 export default {
   name: 'DefaultContainer',
@@ -75,18 +80,18 @@ export default {
     AppAside,
     TheFooter,
     Breadcrumb,
+    DefaultAside,
     DefaultHeaderDropdownAccnt,
     SidebarForm,
     SidebarFooter,
     SidebarToggler,
     SidebarHeader,
-    SidebarMinimizer,
-    ToggleLang,
-    Nav
+    SidebarNav,
+    SidebarMinimizer
   },
-  data: function () {
+  data () {
     return {
-      navigation2: []
+      nav: nav.items
     }
   },
   computed: {
@@ -97,6 +102,5 @@ export default {
       return this.$route.matched.filter((route) => route.name || route.meta.label )
     }
   }
-
 }
 </script>

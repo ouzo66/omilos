@@ -60,6 +60,7 @@ const User = () => import('@/views/users/User')
 
 // Clubs
 const ClubRegister = () => import('@/views/clubs/Register')
+const ClubDetails = () => import('@/views/clubs/Details')
 
 
 Vue.use(Router)
@@ -303,22 +304,27 @@ export default new Router({
               component: Modals
             }
           ]
-        }
-      ]
-    },
-    {
-      path: '/clubs',
-      redirect: '/clubs/list',
-      name: 'Clubs',
-      component: {
-              render (c) { return c('router-view') }
-      },
-      children: [
-        {
-                  path: 'register',
-                  name: 'Register',
-                  component: ClubRegister
-         }
+        },
+             {
+               path: '/clubs',
+               redirect: '/clubs/details',
+               name: 'Clubs',
+               component: {
+                       render (c) { return c('router-view') }
+               },
+               children: [
+                 {
+                    path: 'details',
+                    name: 'Details',
+                    component: ClubDetails
+                 },
+                 {
+                   path: 'register',
+                   name: 'Register',
+                   component: ClubRegister
+                  }
+               ]
+             },
       ]
     },
     {

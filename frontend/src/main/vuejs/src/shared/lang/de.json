@@ -1,0 +1,14 @@
+{
+  "title": "Omilos",
+  "language": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "fr": "Französich",
+    "it": "Italänisch"
+  },
+  "club": {
+    "title" : "Verein",
+    "details" : "Übersicht",
+    "register" : "Registrieren"
+  }
+}

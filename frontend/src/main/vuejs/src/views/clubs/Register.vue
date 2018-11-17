@@ -1,8 +1,5 @@
 <template>
-  <div class="app flex-row align-items-center">
-    <div class="container">
-      <b-row class="justify-content-center">
-        <b-col md="10" sm="10">
+    <div class="animated fadeIn">
             <h1>Registrierung</H1>
             <b-tabs>
             <b-tab title="Verein" active>
@@ -81,15 +78,12 @@
         </b-tabs>
 
 
-        </b-col>
-      </b-row>
-    </div>
-  </div>
+   </div>
 </template>
 
 <script>
 export default {
-  name: 'Register',
+  name: 'ClubRegister',
   data () {
       return {
         clubname: null,
