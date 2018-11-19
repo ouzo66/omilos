@@ -9,7 +9,6 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 import { i18n } from '@/shared/i18n'
-import 'es6-promise/auto'
 import Vuex from 'vuex'
 
 // todo
