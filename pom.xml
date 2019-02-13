@@ -25,7 +25,8 @@
 		<module>gateway-service</module>
 		<module>profile-service</module>
 		<module>frontend</module>
-  </modules>
+		<module>backend-service</module>
+	</modules>
 
 	<dependencies>
 	
